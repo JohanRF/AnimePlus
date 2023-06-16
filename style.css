@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+img{
+	display: block;
+	max-width: 100%;
+}
+
+body{
+	background-color: #2a2b2b;
+}
+/********************** MAIN ************************/
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 1rem;
+}
+
+.guia{
+	transition: .3s;
+}
+
+.guia:hover{
+	color: chocolate;
+	font-size: 1.2rem;
+	transition: .3s;
+}
+
+/* HEADER */
+header{
+	position: fixed;
+	background-color: #000000ba;
+	z-index: 100;
+	top: 0;
+}
+
+.navbar{
+	width: 100vw;
+	height: 60px;
+	padding: 1rem 2rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .logo a{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.navbar .links{
+	display: flex;
+	gap: 6rem;
+}
+
+.navbar img{
+	height: 4rem;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+}
+
+/************ FONDO **************/
+
+.container-slider{ /*todo*/
+	overflow: hidden;
+	box-shadow: 0 0 50px;
+	position: relative;
+	width: 100%;
+	height: 780px;
+}
+.slider{  /*flechas+galeria*/
+	/* width: 400%; */
+	background-color: #288a70;
+	display: flex;
+	width: 400%;
+	margin-left: -100%;
+}
+.slider--section{ /*galeria*/
+	width: 100%;
+	position: relative;
+}
+.slider--img{ /*serie*/
+	width: 100%;
+	display: block;
+	height: 100vh;
+	object-fit: cover;
+}
+
+/* ------------TITULOS------------------ */
+.titulo-contenedor{ /*NOMBRES DE SERIES*/
+	position: absolute;
+	align-content: center;
+	bottom: 0;
+	left: 7rem;
+	margin: 0 0 220px 72px;
+	color: white;
+}
+
+.slider--btn{
+	position: absolute;
+	width: 80px;
+	height: 160px;
+	background-color: rgba(255, 255, 255, 0.4);
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.fa-solid{
+	padding: 24px;
+}
+
+.slider--btn:hover{
+	background-color: #fff;
+}
+.slider--btn--right{
+	right: 0px;
+}
+
+@media screen and (max-width:800px) {
+	.navbar{
+		height: 100%;
+		display:flex;
+		flex-direction: column;
+	}
+	.slider{
+		height: 500px;
+	}
+	.container-slider{ 
+		width: 100%;
+		height: 100%;
+	}
+
+	.slider--img{
+		height: 100%;
+	}
+}
+
+/********************** PAGINA DE SERIES************************/
+#categoria_serie{
+	padding-top: 120px;
+}
+#categoria_serie h1{
+	padding:0 2rem;
+	font-size: 4rem;
+	color: #fff;
+}
+.container_series ul{
+	display: flex;
+}
+.container_series li{
+	padding: 1.5rem 2rem;
+}
+
+.linear{
+	margin: .5rem 2rem;
+	height: 4px;
+	width: 90%;
+	background-color: #5c5f5f;
+}
+.lista_de_series{
+	padding: 0 2rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2rem;
+	text-align: center;
+}
+/* *********************PAGINA DE DEMON SLAYER********************* */
+/* ----------------FONDO DE ARRIBA---------------------- */
+
+.swiper-wrapper{
+	display: flex;
+}
+
+.swiper-hero1 {
+	width: 100%;
+	height: 580px;
+}
+
+.swiper-hero1 img{
+	height: 100vh;
+	width: 100vw;
+	object-fit: cover;
+}
+
+.swiper-hero1 .swiper-button-prev,.swiper-hero1 .swiper-button-next{
+	/* esto se muestra mas en el inspeccionar de la pagina y dara el size del bottom y de hay podemos modificarlo */
+	--swiper-navigation-size: 28px;
+	color: black;
+	background-color: white;
+	height: 70px;
+	width: 50px;
+	margin-top: -35px;
+	opacity: 0;
+	transition:.4s;
+}
+
+.swiper-hero1:hover .swiper-button-prev,.swiper-hero1:hover .swiper-button-next{
+	opacity: 1;
+}
+
+.swiper-hero1 .swiper-button-prev{
+	border-radius: 0 65px 65px 0;
+	left: -10px;
+}
+
+.swiper-hero1 .swiper-button-next{
+	border-radius: 65px 0 0 65px;
+	right: -10px;
+}
+
+
+@media (max-width:1240px) {
+	.swiper-hero1 img{
+		height: 540px;
+		object-fit: cover;
+	}
+	.swiper-hero1 .swiper-button-prev,.swiper-hero1 .swiper-button-next{
+		margin-top: -36px;
+	}
+}
+@media (max-width:720px){
+	.swiper-hero1 img{
+		height: 320px;
+		object-fit: cover;
+	}
+	.swiper-hero1 .swiper-button-prev,.swiper-hero1 .swiper-button-next{
+		margin-top: -36px;
+	}
+}
+
+/* ----------------CARROUSEL---------------- */
+.movies-series{
+	padding: 32px;
+}
+.movies-series h2{
+	font-size: 2rem;
+}
+
+/* ------------FUERAD DEL CONTAINER-CARROUSEL-------------- */
+.container-principal{
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.arrow-left,.arrow-right{
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: white;
+	cursor: pointer;
+	z-index: 500;
+	transition: .3 ease all;
+}
+.arrow-left:hover,.arrow-right:hover{
+	background-color: rgba(0,0,0,0.8);
+	transition: .3s ;
+}
+.arrow-left{
+	left: 0;
+}
+.arrow-right{
+	right: 0;
+}
+
+/* ------------DENTRO DEL CONTAINER-CARROUSEL-------------- */
+.container-carrousel{
+	width: 100%;
+	padding: 20px 0;
+	/* overflow-x: scroll; */
+	overflow: hidden;
+	 /*para ocultar las imagenes se sobre salgan del contenedor  */
+	scroll-behavior: smooth; /* para un desplazamiento suave o modificado. En esta ocacion serie para cuando avance o retroceda le da el efeto suave al despasarce*/
+}
+
+.carrousel{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.movie{
+	min-width:20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.movie .hover{
+	transform: scale(1.2);/* aumente el tamano del contenido*/
+	transform-origin: center;/* fijar en que punto se deberia aumentar o bajar; en este caso en el centro */
+}
+
+/* aqui las imagenes se ajustaron a las demas, ya que todas era de tamaños distintos*/
+.movie img{
+	width: 100%;
+	height: 520px;
+	object-fit: cover;
+	vertical-align: top;/* por defecto el navegador pone como un espacio de sobra y con el verticalaling lo elimina */
+}
+
+.movie2{
+	min-width:20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+.movie2 img{
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	vertical-align: top;
+}
+
+/* ************SERIE: DEMON SLAYER************ */
+#pagina_serie{
+	height: 800px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.separador{
+	height: 200px;
+	width: 100%;
+	background-color: #288a70;
+	position: absolute;
+	bottom: 0;
+	background: linear-gradient(rgba(42, 43, 43, 0), #2a2b2b);
+}
+.fondo_serie{
+
+	@media (max-width:880px) {
+		height: 100vh;
+	}
+}
+.dm-titulo{
+	background-color: chocolate;
+	width: 400px;
+	position: absolute;
+	margin-left: 120px;
+}
+.logo_serie{
+	width: 120px;
+}
+
+/* ------------TAPS-------------- */
+.container_dm{
+/* 	background-color: lightgray;
+ */	max-width: 100%;
+	padding: 1rem;
+	height: 300px;
+}
+.container_dm .tabs{
+/* 	background-color: bisque;
+ */	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.container_dm .tab{
+/* 	background-color: chocolate;
+ */	padding: 1rem;
+	margin: 0 2rem 0 0;
+	border: 1px solid black .5px;
+	border-radius: 24px;
+	box-shadow: 3px 3px 3px 0;
+	transition: all .5s ease;
+}
+.container_dm .tab.activo{
+	background-color: rgba(255, 255, 255, 0.809);
+}
+.container_dm .subcontainer_dm{
+/* 	background-color: chartreuse;
+ */	min-height: 12.5vh;
+	position: relative;
+}
+.container_dm .bloque{
+/* 	background-color: #49c8fe;
+ */	padding: 1rem;
+	margin: 1rem;
+	position: absolute;
+	top: 1.5rem;
+	border: 1px solid black .5px;
+	border-radius: 24px;
+	box-shadow: 2px 2px 4px 0;
+	opacity: 0;
+	transition: all .5s ease;
+	width: 98%;
+}
+.container_dm .bloque.activo{
+	opacity: 1;
+}
+
+/* -------------DENTRO DE CAPITULOS O RECOMENDACIONES------------------ */
+.lista-capitulos{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2em;
+	padding: 32px;
+}
+
+.lista-capitulos .capitulos{
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	gap: 16px;
+}
+
+section img{
+	width: 300px;
+}
+
+
+/* -------------------FOOTER------------------ */
+footer{
+	background-color: aqua;
+/* 	background-color: #292929; */
+	display: flex;
+	justify-content: space-around;
+	padding: 50px;
+}
+footer ul{
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+}
+
+footer li a{
+	color: #fff;
+	padding-left: 20px;
+	text-decoration: none;
+}
